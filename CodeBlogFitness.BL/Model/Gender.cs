@@ -24,7 +24,7 @@ namespace CodeBlogFitness.BL.Model
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentNullException("ssssGender name can`t be empty or equal to null");
+                throw new ArgumentNullException("Gender name can`t be empty or equal to null");
             }
             Name = name;
         }

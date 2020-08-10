@@ -14,9 +14,6 @@ namespace CodeBlogFitness.BL.Model
     {
         #region properties
 
-        
-
-     
         /// <summary>
         /// Name
         /// </summary>
@@ -24,12 +21,12 @@ namespace CodeBlogFitness.BL.Model
         /// <summary>
         /// Gender
         /// </summary>
-        public Gender Gender { get; }
+        public Gender Gender { get; set; }
         /// <summary>
         /// Birth of Date
         /// </summary>
 
-        public DateTime BirthDate { get; }
+        public DateTime BirthDate { get; set;  }
         /// <summary>
         /// Weight
         /// </summary>
@@ -38,6 +35,11 @@ namespace CodeBlogFitness.BL.Model
         /// Height
         /// </summary>
         public double Height { get; set; }
+
+        public int Age
+        {
+            get { return DateTime.Now.Year - BirthDate.Year;  }
+        }
         #endregion
 
         /// <summary>
@@ -92,9 +94,20 @@ namespace CodeBlogFitness.BL.Model
 
         }
 
+
+
+        public User(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException("User  name can`t be empty or equal to null");
+            }
+            Name = name;
+        }
+
         public override string ToString()
         {
-            return Name;
+            return Name + " " + Age;
         }
     }
 }
