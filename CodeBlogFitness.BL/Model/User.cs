@@ -9,6 +9,7 @@ namespace CodeBlogFitness.BL.Model
     /// <summary>
     /// User
     /// </summary>
+    [Serializable]
     public class User
     {
         #region properties
@@ -61,7 +62,7 @@ namespace CodeBlogFitness.BL.Model
                 throw  new ArgumentNullException("User name can`t be empty or null", nameof(name));
             }
 
-            if (Gender == null)
+            if (gender == null)
             {
                 throw new ArgumentNullException("Gender name can`t be empty or null", nameof(gender));
             }

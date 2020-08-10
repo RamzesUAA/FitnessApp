@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace CodeBlogFitness.BL.Model
 {
-   
-        /// <summary>
-        ///  Gender
-        /// </summary>
+
+    /// <summary>
+    ///  Gender
+    /// </summary>
+    [Serializable]
     public class Gender
     {
         /// <summary>
@@ -23,7 +24,7 @@ namespace CodeBlogFitness.BL.Model
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentNullException("Gender name can`t be empty or equal to null");
+                throw new ArgumentNullException("ssssGender name can`t be empty or equal to null");
             }
             Name = name;
         }
