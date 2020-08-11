@@ -47,17 +47,15 @@ namespace CodeBlogFitness.CMD
                     {
                         Console.WriteLine("Incorrect date format");
                     }
-
              }
              return birthDate;
-
         }
         private static double ParseDouble(string name)
         {
             while (true)
             {
                 Console.Write($"Enter {name}: ");
-                if ((double.TryParse(Console.ReadLine(), out double value)))
+                if (double.TryParse(Console.ReadLine(), out double value))
                 {
                     return value;
                 }
