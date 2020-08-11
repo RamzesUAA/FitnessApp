@@ -3,3 +3,4 @@ C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.BL\bin\Debug\CodeBlogFitn
 C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.BL\obj\Debug\CodeBlogFitness.BL.csproj.CoreCompileInputs.cache
 C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.BL\obj\Debug\CodeBlogFitness.BL.dll
 C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.BL\obj\Debug\CodeBlogFitness.BL.pdb
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.BL\obj\Debug\CodeBlogFitness.BL.csprojAssemblyReference.cache

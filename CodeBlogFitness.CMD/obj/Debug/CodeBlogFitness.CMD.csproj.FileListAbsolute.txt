@@ -8,3 +8,5 @@ C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\CodeBlogFit
 C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\CodeBlogFitness.CMD.csproj.CopyComplete
 C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\CodeBlogFitness.CMD.exe
 C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\CodeBlogFitness.CMD.pdb
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\bin\Debug\System.ValueTuple.dll
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\bin\Debug\System.ValueTuple.xml

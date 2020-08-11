@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -12,8 +13,9 @@ namespace CodeBlogFitness.BL.Controllers
     /// <summary>
     /// User`s controller
     /// </summary>
-    public class UserController
+    public class UserController:ControllerBase
     {
+        private const string USER_FILE_NAME = "user.dat";
         /// <summary>
         /// User of the app
         /// </summary>
@@ -53,20 +55,7 @@ namespace CodeBlogFitness.BL.Controllers
         /// <returns></returns>
         private List<User> GetUsersData()
         {
-            var formatter = new BinaryFormatter();
-
-            using (var fs = new FileStream("user.dat", FileMode.OpenOrCreate))
-            {
-                //fs.Length
-                if (fs.Length > 0 && formatter.Deserialize(fs) is List<User> users)
-                {
-                    return users;
-                }
-                else
-                {
-                    return new List<User>();
-                }
-            }
+            return Load<List<User>>(USER_FILE_NAME) ?? new List<User>();
         }
 
         public void SetNewUserData(string genderName, DateTime birthDate, double weight = 1, double height = 1)
@@ -86,11 +75,7 @@ namespace CodeBlogFitness.BL.Controllers
         /// </summary>
         public void Save()
         {
-            var formatter = new BinaryFormatter();
-            using (var fs = new FileStream("user.dat", FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, Users);
-            }
+            Save(USER_FILE_NAME, Users);
         }
 
      
