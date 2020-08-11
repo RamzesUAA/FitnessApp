@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Globalization;
 using System.Resources;
@@ -22,12 +23,12 @@ namespace CodeBlogFitness.CMD
             var name = Console.ReadLine();
             var userController = new UserController(name);
             var eatingController = new EatingController(userController.CurrentUser);
-
+            var exerciseController = new ExerciseController(userController.CurrentUser);
             if (userController.IsNewUser)
             {
                 Console.Write("Enter gender: ");
                 var gender = Console.ReadLine();
-                DateTime birthDateTime = ParseDateTime();
+                DateTime birthDateTime = ParseDateTime("date of birth");
                 double weight = ParseDouble("weight");
                 double height = ParseDouble("height");
 
@@ -35,23 +36,53 @@ namespace CodeBlogFitness.CMD
             }
             Console.WriteLine(userController.CurrentUser);
 
-            Console.WriteLine("What you want to do?");
-            Console.WriteLine("E - enter food consume");
-            var key = Console.ReadKey();
-            Console.WriteLine();
-            if (key.Key == ConsoleKey.E)
-            {
-                var food = EnterEating();
-                eatingController.Add(food.Food, food.Weight);
 
-                foreach (var item in eatingController.Eating.Foods)
+            while (true)
+            {
+                Console.WriteLine("What you want to do?");
+                Console.WriteLine("E - enter food consume");
+                Console.WriteLine("A - enter exercise");
+                Console.WriteLine("Q - exit");
+                var key = Console.ReadKey();
+                Console.WriteLine();
+                switch (key.Key)
                 {
-                    Console.WriteLine($"\t{item} - {item.Value}");
+                    case ConsoleKey.E:
+                        var food = EnterEating();
+                        eatingController.Add(food.Food, food.Weight);
+
+                        foreach (var item in eatingController.Eating.Foods)
+                        {
+                            Console.WriteLine($"\t{item} - {item.Value}");
+                        }
+
+                        break;
+                    case ConsoleKey.A:
+                        var exe = EnterExercise();
+                        exerciseController.Add(exe.Activity, exe.Start, exe.End);
+                        foreach (var item in exerciseController.Exercises)
+                        {
+                            Console.WriteLine($"\t{item.Activity} since {item.Start.ToShortTimeString()} to {item.Finish.ToShortTimeString()}");
+                        }
+                        break;
+                    case ConsoleKey.Q:
+                        Environment.Exit(0);
+                        break;
                 }
             }
-
-
             Console.ReadLine();
+        }
+
+        private static (DateTime Start, DateTime End, Activity Activity) EnterExercise()
+        {
+            Console.Write("Enter name of exercise:");
+            var name = Console.ReadLine();
+            var energy = ParseDouble("Energy consumption per minute");
+            var begin = ParseDateTime("Start of doing exercise: ");
+            var end = ParseDateTime("End of doing exercise: ");
+
+            var activity = new Activity(name, energy);
+            return (begin, end, activity);
 
         }
 
@@ -72,19 +103,19 @@ namespace CodeBlogFitness.CMD
 
         }
 
-        private static DateTime ParseDateTime()
+        private static DateTime ParseDateTime(string name)
         {
              DateTime birthDate;
              while (true)
              {
-                    Console.Write("Enter date of birth (DD.MM.YYYY): ");
+                    Console.Write($"Enter {name}: ");
                     if ((DateTime.TryParse(Console.ReadLine(), out birthDate)))
                     {
                         break;
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect date format");
+                        Console.WriteLine($"Incorrect format {name}");
                     }
              }
              return birthDate;

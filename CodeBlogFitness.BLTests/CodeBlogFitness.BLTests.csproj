@@ -57,6 +57,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\EatingControllerTests.cs" />
+    <Compile Include="Controllers\ExerciseControllerTests.cs" />
     <Compile Include="Controllers\UserControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
