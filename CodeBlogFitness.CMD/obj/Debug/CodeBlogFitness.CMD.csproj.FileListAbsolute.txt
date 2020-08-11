@@ -10,3 +10,11 @@ C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\CodeBlogFit
 C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\CodeBlogFitness.CMD.pdb
 C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\bin\Debug\System.ValueTuple.dll
 C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\bin\Debug\System.ValueTuple.xml
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\CodeBlogFitness.CMD.csproj.GenerateResource.cache
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\CodeBlogFitness.CMD.Languages.Messages.resources
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\bin\Debug\en-us\CodeBlogFitness.CMD.resources.dll
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\CodeBlogFitness.CMD.Languages.Messages.en-us.resources
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\en-us\CodeBlogFitness.CMD.resources.dll
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\bin\Debug\ru-ru\CodeBlogFitness.CMD.resources.dll
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\CodeBlogFitness.CMD.Languages.Messages.ru-ru.resources
+C:\Users\Roman\Desktop\CodeBlogFitness\CodeBlogFitness.CMD\obj\Debug\ru-ru\CodeBlogFitness.CMD.resources.dll
